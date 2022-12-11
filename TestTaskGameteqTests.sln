@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33027.164
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "TestTaskGameteqTests\Tests.csproj", "{967B1015-8166-4532-B339-CB73D70EC269}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObject", "TestTaskGameteqPageObject\PageObject.csproj", "{0ABA1D94-6441-4594-9287-A7E56F85FD2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{967B1015-8166-4532-B339-CB73D70EC269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{967B1015-8166-4532-B339-CB73D70EC269}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{967B1015-8166-4532-B339-CB73D70EC269}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{967B1015-8166-4532-B339-CB73D70EC269}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ABA1D94-6441-4594-9287-A7E56F85FD2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABA1D94-6441-4594-9287-A7E56F85FD2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABA1D94-6441-4594-9287-A7E56F85FD2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABA1D94-6441-4594-9287-A7E56F85FD2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBB9FB41-F891-4728-ABA8-C0195BA7B201}
+	EndGlobalSection
+EndGlobal
