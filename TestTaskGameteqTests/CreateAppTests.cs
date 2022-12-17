@@ -8,8 +8,8 @@ namespace Tests
 {
     public class CreateAppTests : BaseTest
     {
-        
-            [Test]
+
+        [Test]
         public void PositiveCreateAndDeleteApp() //создание и удаление приложения (позитивный кейс)
         {
             InitPage Init = new InitPage(driver); //создаем объект инит страницы
@@ -29,22 +29,22 @@ namespace Tests
             Add.ClickAddSegment(); //нажимаем на кнопку "Add segment"
             Add.ClickSave(); // нажимаем на кнопку сохранить                                                                                                                                                                                                                                              
             Thread.Sleep(5000); //не явно ждем прогрузку офферс 
-            Offers.PrintAppCreatedSuccess(); // залогируем успешное создание приложения после нажатия Save
+            Offers.PrintAppCreatedSuccess(); // залогируем, что должен быть этап перехода на Offers и успешное создание приложения
             Offers.PrintCountRowsOffers(); //залогируем сосчитанное на странице Offers кол-во строк 
             int FirstCountApps = Offers.AllId; // Кол-во до удаления
             string LastCreatedTextIdFirst = Offers.LastCreatedTextId; //фиксируем последний Id созданный нами
             Offers.PrintTextCreatedApp(); //принт текст id, key, name последнего созданного ключа
-            Assert.AreEqual(Add.TextToNameForInsert, Offers.LastCreatedTextName); //проверка, что заведенное Name = выведенному после создания приложения
-            Console.WriteLine("Проверка выведенного в списке Name: " + Add.TextToNameForInsert + " равно заведенному: " + Offers.LastCreatedTextName); //залогируем проверку (что она действительно работает)
-            Assert.AreEqual(Add.TextToKeyForInsert, Offers.LastCreatedTextKey); //проверка, что заведенное Key = выведенному после создания приложения
-            Console.WriteLine("Проверка выведенного в списке Key: " + Add.TextToKeyForInsert + " равно заведенному ранее: " + Offers.LastCreatedTextKey); //залогируем проверку (что она действительно работает)
+            Assert.AreEqual(Add.TextToNameForInsert, Offers.LastCreatedTextName, $"Проверка выведенного в списке Name: { Add.TextToNameForInsert} НЕ РАВНА заведенной ранее: {Offers.LastCreatedTextName}!"); //проверка, что заведенное Name = выведенному после создания приложения
+            Console.WriteLine("Проверка выведенного в списке Name: " + Add.TextToNameForInsert + " РАВНО заведенному ранее: " + Offers.LastCreatedTextName); //залогируем проверку (что она действительно работает)
+            Assert.AreEqual(Add.TextToKeyForInsert, Offers.LastCreatedTextKey, $"Проверка выведенного в списке Key: {Add.TextToKeyForInsert} НЕ РАВНО заведенному ранее: {Offers.LastCreatedTextKey}!"); //проверка, что заведенное Key = выведенному после создания приложения
+            Console.WriteLine("Проверка выведенного в списке Key: " + Add.TextToKeyForInsert + " РАВНО заведенному ранее: " + Offers.LastCreatedTextKey); //залогируем проверку (что она действительно работает)
             Offers.ClickDelete(); //удаляем созданное приложение
             Offers.ClickYes(); // подтверждаем удаление
             Thread.Sleep(5000); //не явно ждем прогрузку офферс для дальнейшего подсчета и проверок
             Offers.PrintCountRowsOffers();//залогируем сосчитанное на странице Offers кол-во строк
-            Assert.AreNotEqual(FirstCountApps, Offers.AllId); //проверка, что количество приложений уменьшилось на 1 
-            Console.WriteLine("Кол-во строк сразу после создания: " + FirstCountApps + " не равно " + "кол-ву строк после удаления последнего: " + (Offers.AllId)); //залогируем проверку (что она действительно работает)
-            Assert.AreNotEqual(LastCreatedTextIdFirst, Offers.LastCreatedTextId); //проверка, что именно последний Id не соответствует последему созданному нами, значит он действительно был удален
+            Assert.AreEqual((FirstCountApps - 1), Offers.AllId, $"Кол-во строк сразу после создания - 1: {(FirstCountApps - 1)} НЕ РАВНО кол-ву строк после удаления последнего: {Offers.AllId}!"); //проверка, что количество приложений уменьшилось на 1 
+            Console.WriteLine("Кол-во строк сразу после создания - 1: " + (FirstCountApps - 1) + " РАВНО " + "кол-ву строк после удаления последнего: " + (Offers.AllId)); //залогируем проверку (что она действительно работает)
+            Assert.AreNotEqual(LastCreatedTextIdFirst, Offers.LastCreatedTextId, $"Последний ID сразу после создания: {LastCreatedTextIdFirst} РАВЕН последнему ID сразу после удаления: {Offers.LastCreatedTextId}!"); //проверка, что именно последний Id не соответствует последему созданному нами, значит он действительно был удален
             Console.WriteLine("Последний ID сразу после создания: " + LastCreatedTextIdFirst + " не равен " + "последнему ID сразу после удаления: " + Offers.LastCreatedTextId); //залогируем проверку (что она действительно работает)
         }
 

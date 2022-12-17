@@ -27,6 +27,6 @@ namespace PageObject
         public void ClickDelete() => BtnDelete.Click(); //метод нажатия на кнопку "Delete"
         public void ClickYes() => BtnYes.Click(); //метод нажатия на кнопку "yes!", подтверждение удаления
         public void PrintTextCreatedApp() => Console.WriteLine("Параметры созданного приложения: " + "Id: " + LastCreatedTextId + " " + "Name: " + LastCreatedTextName + " " + "Key: " + LastCreatedTextKey); //Текст id, name, key последнего созданного приложения
-        public void PrintAppCreatedSuccess() => Console.WriteLine("Приложение создано, перенаправление на страницу Offers"); //залогируем успешное создание приложения после нажатия Save
+        public void PrintAppCreatedSuccess() => Console.WriteLine("Приложение должно быть создано, перенаправление на страницу Offers"); //залогируем, что должен быть этап перехода на Offers
     }
 }
