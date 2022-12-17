@@ -25,12 +25,12 @@ namespace PageObject
         private IWebElement BtnSave => driver.FindElement(By.XPath("//span[text()=' Save ']")); // Кнопка "Save" - уникальный путь
 
         //Объекты для ввода
-        public string TextToNameForInsert = "Filipp";
-        public string TextToKeyForInsert = "Key123!Ключ";
+        public string TextToNameForInsert = "Filipp123!"; //текст, который вводим в поле Name
+        public string TextToKeyForInsert = "Key123!Ключ"; //текст, который вводим в поле Key
  
         //МЕТОДЫ
-        public void SendTextToName() => FieldName.SendKeys(TextToNameForInsert); //метод ввода текста в поле "name"
-        public void SendTextToKey() => FieldKey.SendKeys(TextToKeyForInsert); //метод ввода текста в поле "key"
+        public void SendTextToName() => FieldName.SendKeys(TextToNameForInsert); //метод ввода текста в поле "Name"
+        public void SendTextToKey() => FieldKey.SendKeys(TextToKeyForInsert); //метод ввода текста в поле "Key"
         public void ClickFieldNetworks() => FieldNetworks.Click(); //метод нажатия в поле "Networks"
         public void ClickCheckBoxFacebook() => CheckBoxFacebook.Click(); //метод нажатия на чек-бокс "Facebook"
         public void ClickFieldAddPage() => FieldAddPage.Click(); //метод нажатия на Область вне выпадающего списка "Networks", для его закрытия

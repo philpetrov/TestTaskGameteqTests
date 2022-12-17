@@ -11,9 +11,10 @@ namespace PageObject
 
         }
 
-        private WebDriverWait Wait => new WebDriverWait(driver, TimeSpan.FromSeconds(20)); //явные ожидания 10 сек
+        private WebDriverWait Wait => new WebDriverWait(driver, TimeSpan.FromSeconds(15)); //явные ожидания 15 сек
         private IWebElement BtnMenu => Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.ClassName("mat-slide-toggle-thumb"))); //кнопка-слайд "Menu" - на странице одна с таким классом
 
+        //МЕТОДЫ
         public void ClickMenu() => BtnMenu.Click(); // метод нажатия на Меню
         
     }

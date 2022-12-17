@@ -1,10 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System;
 using OpenQA.Selenium.Support.UI;
-using NUnit.Framework;
-using System.Threading;
-using PageObject;
-using System.Threading.Tasks;
 
 namespace PageObject
 {
@@ -27,24 +23,10 @@ namespace PageObject
 
         //МЕТОДЫ
         public void ClickAdd() => BtnAdd.Click(); //метод нажатия на кнопку "Add"
-        public void CountRowsOffers() => Console.WriteLine("кол-во строк на странице Offers = " + AllId); //кол-во приложений на странице
-        public void PrintCountTextId() => Console.WriteLine("кол-во Id Print " + AllId); //кол-во приложений на странице
-        public void CountAllIdPrint() => Console.WriteLine("кол-во Id " + AllId); //кол-во приложений на странице
+        public void PrintCountRowsOffers() => Console.WriteLine("Кол-во строк на странице Offers = " + AllId); //кол-во приложений на странице
         public void ClickDelete() => BtnDelete.Click(); //метод нажатия на кнопку "Delete"
         public void ClickYes() => BtnYes.Click(); //метод нажатия на кнопку "yes!", подтверждение удаления
         public void PrintTextCreatedApp() => Console.WriteLine("Параметры созданного приложения: " + "Id: " + LastCreatedTextId + " " + "Name: " + LastCreatedTextName + " " + "Key: " + LastCreatedTextKey); //Текст id, name, key последнего созданного приложения
-
-
-        //public async Task awaitsAsync() => await expect(await LastCreatedTextNameElem).toEqual(0); //проверяем отсутствие объекта на странице
-
-        //Assert.IsTrue(actualvalue.Contains("Key123!Ключ"), actualvalue + "Созданное приложение успешно удалено");
-
-        //Assert.That(firstRow.Text, Does.Contain("SomeText"));
-
-        //Assert.assertEquals(ExpectedTitle, KeyFieldText.Text);
-
-        //Assert.AreEqual("Expected Results", driver.Title);///
-
-
+        public void PrintAppCreatedSuccess() => Console.WriteLine("Приложение создано, перенаправление на страницу Offers"); //залогируем успешное создание приложения после нажатия Save
     }
 }
