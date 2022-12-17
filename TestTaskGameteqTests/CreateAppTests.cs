@@ -45,7 +45,7 @@ namespace Tests
             Assert.AreEqual((FirstCountApps - 1), Offers.AllId, $"Кол-во строк сразу после создания - 1: {(FirstCountApps - 1)} НЕ РАВНО кол-ву строк после удаления последнего: {Offers.AllId}!"); //проверка, что количество приложений уменьшилось на 1 
             Console.WriteLine("Кол-во строк сразу после создания - 1: " + (FirstCountApps - 1) + " РАВНО " + "кол-ву строк после удаления последнего: " + (Offers.AllId)); //залогируем проверку (что она действительно работает)
             Assert.AreNotEqual(LastCreatedTextIdFirst, Offers.LastCreatedTextId, $"Последний ID сразу после создания: {LastCreatedTextIdFirst} РАВЕН последнему ID сразу после удаления: {Offers.LastCreatedTextId}!"); //проверка, что именно последний Id не соответствует последему созданному нами, значит он действительно был удален
-            Console.WriteLine("Последний ID сразу после создания: " + LastCreatedTextIdFirst + " не равен " + "последнему ID сразу после удаления: " + Offers.LastCreatedTextId); //залогируем проверку (что она действительно работает)
+            Console.WriteLine("Последний ID сразу после создания: " + LastCreatedTextIdFirst + " НЕ РАВЕН " + "последнему ID сразу после удаления: " + Offers.LastCreatedTextId); //залогируем проверку (что она действительно работает)
         }
 
 
