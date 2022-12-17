@@ -8,6 +8,7 @@ namespace PageObject
         public BasePage(IWebDriver webDriver)
         {
             driver = webDriver;
+
         }
     }
 }

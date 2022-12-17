@@ -1,4 +1,6 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace PageObject
 {
@@ -8,9 +10,10 @@ namespace PageObject
         {
 
         }
+        private WebDriverWait Wait => new WebDriverWait(driver, TimeSpan.FromSeconds(20));  //явные ожидания 10 сек
+        private IWebElement BtnDashboard => Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.CssSelector("button[routerlink='/dashboard']")));
+        private IWebElement BtnOffers => Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.CssSelector("button[routerlink='/list']")));
 
-        private IWebElement BtnDashboard => driver.FindElement(By.CssSelector("button[routerlink='/dashboard']")); //Кнопка "Dashboard" - уникальный локатор
-        private IWebElement BtnOffers => driver.FindElement(By.CssSelector("button[routerlink='/list']")); //Кнопка "Offers" - уникальный локатор
 
         public void ClickDashboard() => BtnDashboard.Click(); //метод нажатия на кнопку "Dashboard"
         public void ClickOffers() => BtnOffers.Click(); //метод нажатия на кнопку "Offers"

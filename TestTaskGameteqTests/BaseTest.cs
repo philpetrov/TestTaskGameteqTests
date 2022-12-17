@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using PageObject;
 using System;
 
 namespace Tests
@@ -13,8 +14,9 @@ namespace Tests
         public void SetUp()
         {
             driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("http://test-task.gameteq.com/");
-            driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl("http://test-task.gameteq.com/"); //переход на тестовую страницу
+            driver.Manage().Window.Maximize(); //браузер на полный экран
+            
         }
 
         [TearDown]

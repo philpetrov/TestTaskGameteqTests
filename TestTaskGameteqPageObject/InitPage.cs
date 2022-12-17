@@ -1,4 +1,6 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace PageObject
 {
@@ -9,8 +11,10 @@ namespace PageObject
 
         }
 
-        private IWebElement BtnMenu => driver.FindElement(By.ClassName("mat-slide-toggle-thumb")); //кнопка-слайд "Menu" - на странице одна с таким классом
+        private WebDriverWait Wait => new WebDriverWait(driver, TimeSpan.FromSeconds(20)); //явные ожидания 10 сек
+        private IWebElement BtnMenu => Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.ClassName("mat-slide-toggle-thumb"))); //кнопка-слайд "Menu" - на странице одна с таким классом
 
-        public void ClickMenu() => BtnMenu.Click();
+        public void ClickMenu() => BtnMenu.Click(); // метод нажатия на Меню
+        
     }
 }
